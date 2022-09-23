@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking</title>
+    <meta name="generator" content="DA-Formmaker 4.13.4">
+    <!--TEMPLATE:4.2-->    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>    
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+
+    <style type="text/css">
+
+
+        body { background-color:#000000; color:#B1CBCB; font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; font-size: 12pt; }
+h1 { color:#FAF6F6; font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; font-size:18pt; }
+p,li { color:#B1CBCB; font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; font-size:12pt; }
+.control-label { color:#B1CBCB; font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; font-size:12pt; }
+.internal { display: none; }
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker-week-end,
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	color: #000000;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+
+/* icon support */
+.ui-menu-icons {
+     position: relative;
+}
+.ui-menu-icons .ui-menu-item {
+     padding-left: 2em;
+}
+
+/* left-aligned */
+.ui-menu .ui-icon {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: .2em;
+     margin: auto 0;
+}
+
+/* right-aligned */
+.ui-menu .ui-menu-icon {
+     left: auto;
+     right: 0;
+}
+
+/* Component containers
+----------------------------------*/
+.ui-widget {
+     font-family: Arial,Helvetica,Geneva; /*FONTCAL*/
+}
+.ui-widget .ui-widget {
+     font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+     font-family: Arial,Helvetica,Geneva; /*FONTCAL*/
+     font-size: 1em;
+}
+.ui-widget-content {
+     border: 1px solid #000000; /*BORDERCAL*/
+     background: #EEEEEE; /*BGCAL*/
+     color: #000000; /*TEXTCAL*/
+}
+
+.ui-widget-header {
+     border: 1px solid #000000;
+     background: #CCCCCC;/*BGHEADINGCAL*/
+     color: #000000;
+     font-weight: normal;
+}
+
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+     border: 1px solid #000000; /*FONTCAL*/
+     background: #B6CDE9; /*BGDAYCAL*/
+     font-weight: normal;
+     color: #000000;/*TEXTCAL*/
+}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+     border-top-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+     border-top-right-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+     border-bottom-left-radius: 4px;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+     border-bottom-right-radius: 4px;
+}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+     width: 16px;
+     height: 16px;
+}
+.ui-icon,
+.ui-widget-content .ui-icon {
+     background-image: url("https://code.jquery.com/ui/1.11.2/themes/smoothness/images/ui-icons_222222_256x240.png");
+}
+.ui-widget-header .ui-icon {
+     background-image: url("https://code.jquery.com/ui/1.11.2/themes/smoothness/images/ui-icons_222222_256x240.png");
+}
+
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+     background-image: url("https://code.jquery.com/ui/1.11.2/themes/smoothness/images/ui-icons_454545_256x240.png");
+}
+.ui-state-active .ui-icon {
+     background-image: url("https://code.jquery.com/ui/1.11.2/themes/smoothness/images/ui-icons_454545_256x240.png");
+}
+
+/* positioning */
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	/*border: 1px solid #999999;*/
+	border: 1px solid #000000;
+
+	font-weight: normal;
+	color: #212121;
+}
+
+div.ui-datepicker{
+	font-family: Arial,Helvetica,Geneva;
+	font-size:10px;
+}
+.form-group {
+    margin-bottom: 1rem !important;
+}
+
+
+.timepicker {
+    display: none;
+    position: fixed;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    background: #FFFFFF;
+    overflow-y: auto;
+    max-height: 150px;
+    width: 9em;     
+}
+
+.timepicker-list {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.timepicker-list li {
+   padding: 3px 0 3px 5px;
+   cursor: pointer;
+   white-space: nowrap;
+   color: #111111;
+   list-style: none;
+   margin: 0;
+}
+
+.timepicker-list li:hover {
+    color: #FFFFFF;
+    background-color: #2196F3; 
+}.timepicker {
+    display: none;
+    position: fixed;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    background: #FFFFFF;
+    overflow-y: auto;
+    max-height: 150px;
+    width: 9em;     
+}
+
+.timepicker-list {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.timepicker-list li {
+   padding: 3px 0 3px 5px;
+   cursor: pointer;
+   white-space: nowrap;
+   color: #111111;
+   list-style: none;
+   margin: 0;
+}
+
+.timepicker-list li:hover {
+    color: #FFFFFF;
+    background-color: #2196F3; 
+}
+        .captcha {
+            width: 15%;
+            min-width: 120px;
+            display: inline;
+        }
+
+        .form-control {
+            margin-bottom: 5px;
+            font-size: 12pt !important;           
+        }
+
+        .textend {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox {
+            margin-top: 0px;
+        }
+
+        .radio {
+            margin-top: 0px;
+        }
+
+        .zwtext {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .input-file {
+            border-width: 0px;
+            height: 100%;
+            background-color: transparent;
+        }
+
+        body {
+        	margin-top: 15px;
+        	line-height: 1.5 !important;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+
+        
+        
+
+    </style>
+
+    <script type="text/javascript">
+    function addHiddenField(formID, name, value)
+{
+	var input = document.createElement("input");
+	input.setAttribute("type", "hidden");
+	input.setAttribute(name, "name_you_want");
+	input.setAttribute(value, "value_you_want");
+	document.getElementById(formID).appendChild(input);
+}
+
+function GetCookie(cookie_name)
+{
+  if (document.cookie.length>0)
+    {
+    cookie_start=document.cookie.indexOf(cookie_name + "=");
+    if (cookie_start!=-1)
+      { 
+      cookie_start=cookie_start + cookie_name.length+1; 
+      cookie_end=document.cookie.indexOf(";",cookie_start);
+      if (cookie_end==-1) cookie_end=document.cookie.length;
+      return unescape(document.cookie.substring(cookie_start,cookie_end));
+      } 
+    }
+  return "";
+}
+
+function str_replace(search, replace, subject) {
+	return subject.split(search).join(replace);
+}
+    </script>
+
+
+    <!-- DAFORMJSBEGIN -->
+    <!-- JSCAPTCHAREFRESH -->
+
+    <script type="text/javascript">
+
+        function SetCookieValues() {
+          
+}
+
+    function SetCookies() {
+      
+}
+
+    </script>
+
+
+    <script type="text/javascript">
+function chkFormular()
+{
+	return true;
+}
+</script>
+
+
+    <!-- JSCRIPT2 -->
+    <!-- DAFORMJSEND -->
+    
+</head>
+<body onLoad="SetCookieValues();">
+  
+<div class="container mainContainer" style="width:80%"> 
+<!-- FORMTITLE_BEGIN -->
+<div class="row">
+    <div class="col-md-12"> 
+      <h1>Photoshoot Booking</h1>
+    </div>
+</div>
+<!-- FORMTITLE_END -->
+
+
+  <form id="DA-Formmaker-Form" action="https://www.ekiwi-scripts.de/form/v4/formmail_v4.php" method="POST" name="DAFORM" onSubmit="SetCookies();return chkFormular();" enctype="multipart/form-data" target="_self">
+  <input type="hidden" name="formid" value="266457">
+  <input type="hidden" name="settings" value="cXZ7ZHJrY2Vicg==">
+  <input type="hidden" name="redirect" value="https://www.ekiwi.de/form/thanks.htm">
+  <input type="hidden" name="subject" value="Photoshoot Booking">
+  <input type="hidden" name="admin" value="e3h6dnl+bXJzV3B6dn57OXR4eg==">
+  <input type="hidden" name="admin1" value="">
+  <input type="hidden" name="admin2" value="">
+  <input type="hidden" name="typemail" value="html">
+  <input type="hidden" name="crypt" value="1">
+  <input type="hidden" name="conf_csv" value="0">
+  <input type="hidden" name="conf_csv2" value="0">
+  <input type="hidden" name="einleittext" value="">
+  <input type="hidden" name="conf_MailtextEnd" value="">
+  <input type="hidden" name="copyfields" value="-1">  
+  <input type="hidden" name="copyip" value="-1">
+  <input type="hidden" name="hide_empty_fields" value="0">
+  <input type="hidden" name="settings_encoding" value="utf-8">  
+  <input type="hidden" name="conf_pdf" value="0">
+  <input type="hidden" name="conf_lang" value="en">
+  <input type="hidden" name="ReturnToSender" value="0">
+   <input type="hidden" name="label__first_name" value="TmFtZQ==">
+   <input type="hidden" name="label__email" value="RW1haWw=">
+   <input type="hidden" name="label__phone" value="UGhvbmU=">
+   <input type="hidden" name="label__date" value="RGF0ZQ==">
+   <input type="hidden" name="label__State" value="U3RhdGU=">
+   <input type="hidden" name="label__time" value="VGltZQ==">
+   <input type="hidden" name="label__package" value="UGFja2FnZQ==">
+   <input type="hidden" name="label__comment" value="TWVzc2FnZQ==">
+  <input type="hidden" name="conf_copy_attachments" value="0">
+
+  
+<div class="row">
+<div class="col-md-12">
+<div class="form-group" id="daf-22142">
+		<label for="first_name" class="control-label">Name<span style="color: red;"> *</span></label>
+		<input type="text" name="first_name" class="form-control" id="first_name" value="" maxLength="100" required>
+</div>
+
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="form-group" id="daf-75112">
+		<label for="email" class="control-label">Email<span style="color: red;"> *</span></label>
+		<input type="text" name="email" class="form-control" id="email" value="" maxLength="200" required oninvalid="this.setCustomValidity('Please enter your e-mail address so that I can reach you.')"
+	oninput="this.setCustomValidity('')" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
+</div>
+
+</div>
+<div class="col-md-6">
+<div class="form-group" id="daf-75112">
+		<label for="phone" class="control-label">Phone</label>
+		<input type="text" name="phone" class="form-control" id="phone" value="" maxLength="100">
+</div>
+
+</div>
+</div>
+
+<div class="form-group" id="daf-62255">
+	<hr>
+<h3>Date Selection</h3>
+<p>Preferred photoshoot date</p>
+</div>
+
+<div class="row">
+<div class="col-md-3">
+<div class="form-group" id="daf-97815">
+	<label for="date" class="control-label">Date<span style="color: red;"> *</span></label>
+	<input type="text" name="date" class="form-control" id="date" value="" required onchange="this.setCustomValidity('')">
+</div>
+
+</div>
+<div class="col-md-3">
+<div class="form-group" id="daf-97815">
+	<label for="State" class="control-label">State<span style="color: red;"> *</span></label>
+	<select id="State" name="State" class="form-control" size="1" required>
+	<option></option>
+		<option value="Alabama">Alabama</option>
+		<option value="Alaska">Alaska</option>
+		<option value="Arizona">Arizona</option>
+		<option value="Arkansas">Arkansas</option>
+		<option value="California">California</option>
+		<option value="Colorado">Colorado</option>
+		<option value="Connecticut">Connecticut</option>
+		<option value="Delaware">Delaware</option>
+		<option value="Florida">Florida</option>
+		<option value="Georgia">Georgia</option>
+		<option value="Hawaii">Hawaii</option>
+		<option value="Idaho">Idaho</option>
+		<option value="Illinois">Illinois</option>
+		<option value="Indiana">Indiana</option>
+		<option value="Iowa">Iowa</option>
+		<option value="Kansas">Kansas</option>
+		<option value="Kentucky">Kentucky</option>
+		<option value="Louisiana">Louisiana</option>
+		<option value="Maine">Maine</option>
+		<option value="Maryland">Maryland</option>
+		<option value="Massachusetts">Massachusetts</option>
+		<option value="Michigan">Michigan</option>
+		<option value="Minnesota">Minnesota</option>
+		<option value="Mississippi">Mississippi</option>
+		<option value="Missouri">Missouri</option>
+		<option value="Montana">Montana</option>
+		<option value="Nebraska">Nebraska</option>
+		<option value="Nevada">Nevada</option>
+		<option value="New Hampshire">New Hampshire</option>
+		<option value="New Jersey">New Jersey</option>
+		<option value="New Mexico">New Mexico</option>
+		<option value="New York">New York</option>
+		<option value="North Carolina">North Carolina</option>
+		<option value="North Dakota">North Dakota</option>
+		<option value="Ohio">Ohio</option>
+		<option value="Oklahoma">Oklahoma</option>
+		<option value="Oregon">Oregon</option>
+		<option value="Pennsylvania">Pennsylvania</option>
+		<option value="Rhode Island">Rhode Island</option>
+		<option value="South Carolina">South Carolina</option>
+		<option value="South Dakota">South Dakota</option>
+		<option value="Tennessee">Tennessee</option>
+		<option value="Texas">Texas</option>
+		<option value="Utah">Utah</option>
+		<option value="Vermont">Vermont</option>
+		<option value="Virginia">Virginia</option>
+		<option value="Washington">Washington</option>
+		<option value="West Virginia">West Virginia</option>
+		<option value="Wisconsin">Wisconsin</option>
+		<option value="Wyoming">Wyoming</option>
+	</select>
+
+</div>
+
+</div>
+<div class="col-md-3">
+<div class="form-group" id="daf-97815">
+		<label for="time" class="control-label">Time<span style="color: red;"> *</span></label>
+		<input type="text" name="time" class="form-control timepickerField" id="time" value="" required>
+</div>
+
+</div>
+<div class="col-md-3">
+<div class="form-group" id="daf-97815">
+	<label for="package" class="control-label">Package<span style="color: red;"> *</span></label>
+	<select id="package" name="package" class="form-control" size="1" required>
+	<option></option>
+		<option value=" "> </option>
+		<option value="Graduate(Single)">Graduate(Single)</option>
+		<option value="Graduate (Duo)">Graduate (Duo)</option>
+		<option value="Grad Squad (3 people)">Grad Squad (3 people)</option>
+		<option value="Grad Squad (>3 People)">Grad Squad (>3 People)</option>
+		<option value="College Students">College Students</option>
+		<option value="Non-College Students">Non-College Students</option>
+		<option value="Solo">Solo</option>
+		<option value="The Duo">The Duo</option>
+		<option value="Three People">Three People</option>
+		<option value="Four or More">Four or More</option>
+		<option value="Couple Engagement">Couple Engagement</option>
+		<option value="Event Photography">Event Photography</option>
+		<option value="Architectural Photography">Architectural Photography</option>
+		<option value="Wedding Photography">Wedding Photography</option>
+		<option value="Team and Sports">Team and Sports</option>
+		<option value="Product and Branding">Product and Branding</option>
+	</select>
+
+</div>
+
+</div>
+</div>
+
+<div class="form-group" id="daf-64589">
+	<hr>
+<h3>Additional information</h3>
+</div>
+
+<div class="form-group" id="daf-39087">
+	<label for="comment" class="control-label">Message</label>
+	<textarea id="comment" class="form-control" name="comment" rows="5" maxlength="500"></textarea>
+<div id="the-count_comment" style="font-family: inherit; font-style: inherit; float: right; padding: 0.1em 0 0 0; font-size: 0.95em;"><span id="current_comment">0</span>
+<span id="maximum_comment"> / 500</span></div>
+
+</div>
+
+<div class="form-group" id="daf-13777">
+	<p style="color:red;">* mandatory information</p>
+<hr>
+</div>
+
+<div class="row internal">
+	<div class="col-md-2">
+		<label for="internal" class="control-label"></label>
+	</div>
+	<div class="col-md-10">
+		<input type="text" name="internal_value" class="form-control" id="internal_value" value="" maxLength="50">
+	</div>
+</div>
+
+<!-- CAPTCHA -->
+
+<p class="textend"></p>
+<div class="row">
+    <div class="col-md-6">
+            <button type="submit" class="btn btn-success">Book Now</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+            
+    </div>
+    <div style="text-align: right;" class="col-md-6">
+            
+            
+    </div>
+</div>
+
+</form>
+
+</div>
+
+
+
+
+
+
+<div id="timePickerDiv_time" class="timepicker">
+     <ul class="timepicker-list">
+          
+          <li>05:00</li>
+<li>05:15</li>
+<li>05:30</li>
+<li>05:45</li>
+<li>06:00</li>
+<li>06:15</li>
+<li>06:30</li>
+<li>06:45</li>
+<li>07:00</li>
+<li>07:15</li>
+<li>07:30</li>
+<li>07:45</li>
+<li>08:00</li>
+<li>08:15</li>
+<li>08:30</li>
+<li>08:45</li>
+<li>09:00</li>
+<li>09:15</li>
+<li>09:30</li>
+<li>09:45</li>
+<li>10:00</li>
+<li>10:15</li>
+<li>10:30</li>
+<li>10:45</li>
+<li>11:00</li>
+<li>11:15</li>
+<li>11:30</li>
+<li>11:45</li>
+<li>12:00</li>
+<li>12:15</li>
+<li>12:30</li>
+<li>12:45</li>
+<li>13:00</li>
+<li>13:15</li>
+<li>13:30</li>
+<li>13:45</li>
+<li>14:00</li>
+<li>14:15</li>
+<li>14:30</li>
+<li>14:45</li>
+<li>15:00</li>
+<li>15:15</li>
+<li>15:30</li>
+<li>15:45</li>
+<li>16:00</li>
+<li>16:15</li>
+<li>16:30</li>
+<li>16:45</li>
+<li>17:00</li>
+<li>17:15</li>
+<li>17:30</li>
+<li>17:45</li>
+<li>18:00</li>
+<li>18:15</li>
+<li>18:30</li>
+<li>18:45</li>
+<li>19:00</li>
+<li>19:15</li>
+<li>19:30</li>
+<li>19:45</li>
+<li>20:00</li>
+<li>20:15</li>
+<li>20:30</li>
+<li>20:45</li>
+<li>21:00</li>
+<li>21:15</li>
+<li>21:30</li>
+<li>21:45</li>
+<li>22:00</li>
+
+     </ul>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+
+var lastPicker;
+var lastId = "";
+
+$(document).ready(function() 
+{
+     $(document).click(function(e)  {
+          hidePicker();
+     });
+
+     $("ul.timepicker-list  li").click(function(e) {               
+          let text = $(this).text();
+          let id = document.getElementById(lastId);
+          id.value = text;
+          id.setCustomValidity('')
+          hidePicker();
+     });
+
+     $(".timepickerField").keyup(function(e) {
+          if (e.keyCode == 9) hidePicker();
+     });
+
+     $(".timepickerField").focusin(function(e) {
+          showPicker(e.target.id);
+     });     
+
+     $(".timepickerField").on('focus, mousedown', function(e) {
+          showPicker(e.target.id);              
+     });
+
+     $(window).scroll(function (e) {
+          if (lastPicker != null) positionPicker(lastId);          
+     });
+
+     $(window).resize(function (e) {
+          if (lastPicker != null) positionPicker(lastId);          
+     });
+
+
+     function showPicker(id)
+     {
+        hidePicker();
+        positionPicker(id);
+        $("#timePickerDiv_" + id).css("display", "block");
+        lastId = id; 
+
+        setTimeout(function() {
+              lastPicker = $("#timePickerDiv_" + id);
+        }, 300);    
+     }
+
+     function positionPicker(id)
+     {
+        var pos =  $("#" + id).offset();
+        var scrollTop =  $(window).scrollTop();
+        var sizeHeight = $("#" + id).height();
+
+        var newPosX = pos.left;
+        var newPosY = pos.top + sizeHeight + 20 - scrollTop;        
+        
+        $("#timePickerDiv_" + id).css("left", newPosX);
+        $("#timePickerDiv_" + id).css("top", newPosY);
+     }     
+
+     function hidePicker() 
+     {
+       if (lastPicker != null)
+       {
+         lastPicker.css("display", "none");
+         lastPicker = null;
+         lastId = "";
+       }
+     }
+});
+
+
+$(document).ready(function () {
+    var startDate = new Date();
+startDate.setDate(startDate.getDate() + 0 ); 
+$('#date').datepicker({
+       prevText: '<back', prevStatus: '',
+        prevJumpText: '&#x3c;&#x3c;', prevJumpStatus: '',
+        nextText: 'Next>', nextStatus: '',
+        nextJumpText: '&#x3e;&#x3e;', nextJumpStatus: '',
+        currentText: 'today', currentStatus: '',
+        todayText: 'today', todayStatus: '',
+        clearText: '-', clearStatus: '',
+        closeText: 'close', closeStatus: '',
+        monthNames: ['January','February','March','April','May','June',
+'July','August','September','October','November','December'],
+        monthNamesShort: ['Jan','Feb','Mar','Apr','May',
+'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        dayNames: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+        dayNamesShort: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+        dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+        showMonthAfterYear: false,
+        changeMonth: true,
+        changeYear: true,   
+        minDate: startDate,
+        defaultDate: "01/01/2019",
+        yearRange: "2019:2040",   
+        dateFormat:'mm/dd/yy'
+    } 
+  );
+
+
+
+
+    $('#comment').keyup(function () {
+    var characterCount = $(this).val().length,
+        current = $('#current_comment'),
+        maximum = $('#maximum_comment'),
+        theCount = $('#the-count_comment');
+    var maxlength = $(this).attr('maxlength');
+    var changeColor = 0.75 * maxlength;
+    current.text(characterCount);
+
+    if (characterCount > changeColor && characterCount < maxlength) {
+        current.css('color', '#FF4500');
+        current.css('fontWeight', 'bold');
+    }
+    else if (characterCount >= maxlength) {
+        current.css('color', '#B22222');
+        current.css('fontWeight', 'bold');
+    }
+    else {
+        var col = maximum.css('color');
+        var fontW = maximum.css('fontWeight');
+        current.css('color', col);
+        current.css('fontWeight', fontW);
+    }
+
+});
+
+});
+
+</script>
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+
+
+</body>
+</html>
